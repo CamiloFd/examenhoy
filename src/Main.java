@@ -1,10 +1,12 @@
 import controlador.CourseController;
 import controlador.EnrollmentController;
+import controlador.Grade_typeController;
 import controlador.StudentController;
 import controlador.TeacherController;
 import db.connection;
 import modelo.Course;
 import modelo.Enrollment;
+import modelo.Grade_type;
 import modelo.Student;
 import modelo.Teacher;
 import vista.ViewCourse;
@@ -38,9 +40,11 @@ public class Main {
 
         // Inicializar objeto profesor
         Teacher newTeacher = new Teacher(1235, "Pablo", "Ciencias Sociales");
-        // Guardar proesor en la base de datos
+        // Guardar profesor en la base de datos
         teacherController.insertNewTeacher(newTeacher);
         //Mostrar datos en las vistas
+        Teacher newTeacher1 = new Teacher(1235, "Pablo", "Ciencias Sociales");
+        teacherController.insertNewTeacher(newTeacher);
         teacherController.displayAllTeachers();
 
         Course newCourse = new Course(1234, "Historia", "...", true, newTeacher.getId());
@@ -51,5 +55,8 @@ public class Main {
         enrollmentController.insertNewEnrollment(newEnrollment);
         enrollmentController.displayAllEnrollments();
 
+        Grade_typeController grade_typeController = new Grade_typeController();
+        Grade_type newGrade_type = new Grade_type(1, "Parcial", 4.5); // Grade_type
+        grade_typeController.insertNewGrade_type(newGrade_type);
     }
 }
