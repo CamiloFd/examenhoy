@@ -1,18 +1,7 @@
-import controlador.CourseController;
-import controlador.EnrollmentController;
-import controlador.Grade_typeController;
-import controlador.StudentController;
-import controlador.TeacherController;
+import controlador.*;
 import db.connection;
-import modelo.Course;
-import modelo.Enrollment;
-import modelo.Grade_type;
-import modelo.Student;
-import modelo.Teacher;
-import vista.ViewCourse;
-import vista.ViewEnrollment;
-import vista.ViewStudent;
-import vista.ViewTeacher;
+import modelo.*;
+import vista.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,12 +12,14 @@ public class Main {
         ViewTeacher viewTeacher = new ViewTeacher();
         ViewCourse viewCourse = new ViewCourse();
         ViewEnrollment viewEnrollment = new ViewEnrollment();
+        ViewGrade viewGrade = new ViewGrade();
 
         // Inicializar controladores
         StudentController studentController = new StudentController(viewStudent);
         TeacherController teacherController = new TeacherController(viewTeacher);
         CourseController courseController = new CourseController(viewCourse);
         EnrollmentController enrollmentController = new EnrollmentController(viewEnrollment);
+        GradeController gradeController = new GradeController(viewGrade);
 
         // Inicializar objeto estudiante
         Student newStudent = new Student(12345, "Daniel", "daniel@gmail.com");
@@ -58,5 +49,9 @@ public class Main {
         Grade_typeController grade_typeController = new Grade_typeController();
         Grade_type newGrade_type = new Grade_type(1, "Parcial", 4.5); // Grade_type
         grade_typeController.insertNewGrade_type(newGrade_type);
+
+        Grade newGrade = new Grade(1, 1, 1, 4.5);
+        gradeController.insertNewGrade(newGrade);
+        gradeController.displayAllGrades();
     }
 }
