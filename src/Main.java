@@ -38,7 +38,7 @@ public class Main {
         teacherController.insertNewTeacher(newTeacher);
         teacherController.displayAllTeachers();
 
-        Course newCourse = new Course(1234, "Historia", "...", true, newTeacher.getId());
+        Course newCourse = new Course(123, "Etica", "...", true,12345 );
         courseController.insertNewCourse(newCourse);
         courseController.displayAllCourses();
 
