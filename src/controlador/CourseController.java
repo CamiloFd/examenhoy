@@ -8,7 +8,7 @@ import java.util.List;
 public class CourseController {
     private ViewCourse view;
 
-    public CourseController(ViewCourse view) {
+    public  CourseController(ViewCourse view) {
         this.view = view;
     }
 

@@ -1,8 +1,10 @@
 import controlador.CourseController;
+import controlador.Grade_typeController;
 import controlador.StudentController;
 import controlador.TeacherController;
 import db.connection;
 import modelo.Course;
+import modelo.Grade_type;
 import modelo.Student;
 import modelo.Teacher;
 import vista.ViewCourse;
@@ -31,13 +33,16 @@ public class Main {
         // Mostrar datos en las vistas
         studentController.displayAllStudents();
 
-        Teacher newTeacher = new Teacher(1235, "Pablo", "Ciencias Sociales");
-        teacherController.insertNewTeacher(newTeacher);
+        //Teacher newTeacher = new Teacher(1235, "Pablo", "Ciencias Sociales");
+        //teacherController.insertNewTeacher(newTeacher);
         teacherController.displayAllTeachers();
 
-        Course newCourse = new Course(1234, "Historia", "...", true, newTeacher.getId());
-        courseController.insertNewCourse(newCourse);
+        //Course newCourse = new Course(1234, "Historia", "...", true, newTeacher.getId());
+        //courseController.insertNewCourse(newCourse);
         courseController.displayAllCourses();
 
+        Grade_typeController grade_typeController = new Grade_typeController();
+        Grade_type newGrade_type = new Grade_type(1, "Parcial", 4.5); // Grade_type
+        grade_typeController.insertNewGrade_type(newGrade_type);
     }
 }
